@@ -34,10 +34,11 @@ t_box.setAutoDraw(True)
 win.flip()
 event.waitKeys(keyList="1") # When setup stream pause to start the experiment capture.
 
-# In chunks of 3 mins: 
-for i in range(8,9):
+# In chunks of 3 mins:
+length_of_trials = 180 # in seconds
+for i in range(10):
     # Set up Sound.
-    Left = sound.Sound('A', secs=-1, stereo=True, hamming=True, name='Front', sampleRate=44100, startTime = i*180, stopTime = (i+1)*180)
+    Left = sound.Sound('A', secs=-1, stereo=True, hamming=True, name='Front', sampleRate=44100, startTime = i*length_of_trial, stopTime = (i+1)*length_of_trial)
     
     # Load audio
     Left.setSound(filename)
